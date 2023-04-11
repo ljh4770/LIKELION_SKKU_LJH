@@ -1,2 +1,2 @@
 LIKELION_SKKU_LJH
-action on master branch
+action on sub branch
