@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 40px;
+    color: pink;
+    /* 구글 폰트 적용 */
+    font-family: 'Sunflower', sans-serif;
+}
