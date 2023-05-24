@@ -20,14 +20,14 @@ const mongoose = require('mongoose');
 // 몽고디비의 저장소에 저희가 접근을 해서 저장하고 그 정보를 불러와주는 웹서비스
 // SQL -> 전통적으로 데이터베이스를 다루고, 정보들에 접근하고 변경하고
 // Relation == Table == 특성에 맞게 분리해줘야함 // 제1정규화 2정규화
-// noSQL 
+// noSQL
 mongoose.connect(mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true // useCreateIndex: true, useFindAndMOdify: false
 }).then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
 
 
-app.get('/', (req, res) => res.send('Hello World!\n nodemon 적용'));
+app.get('/', (req, res) => res.send('Hello World! nodemon 적용 dsfdasfsafadfafaf'));
 app.get('/example', (req, res) => res.send("example respond"));
 
 
@@ -36,7 +36,7 @@ app.post("/register", (req, res) =>{
   // 회원 가입 할 때 필요한 정보들을 client에서 가져오면
   // 그것들을 데이터베이스에 넣어준다.
 
-  // req.body 안에는 josn 형식에 데이터가 담겨져 있음
+  // req.body 안에는 json 형식에 데이터가 담겨져 있음
   /*
   {
     id: "hello",
@@ -47,12 +47,11 @@ app.post("/register", (req, res) =>{
 
   // mongoDB method
   // client에서 가져온 데이터를 mongDB에 저장해줌
-  /*
-  user.save((err, userInfo) => {
-    if(err) return res.json({success: false, err});
-    return res.status(200).json({succes: true});
-  })
-  */
+  // user.save((err, userInfo) => {
+  //   if(err) return res.json({success: false, err});
+  //   return res.status(200).json({succes: true});
+  // })
+  
 
   // mongoDB 버전이 올라가서 callback 함수를 더 이상 지원하지 않는다고 함
   // -> callback 함수 정의하지 않고 구현
@@ -64,7 +63,7 @@ app.post("/register", (req, res) =>{
   .catch((err) => {
     return res.json({succes: false, err});
   })
- } catch (err){
+ } catch (err) {
   console.log(err);
  } 
 })
@@ -73,5 +72,6 @@ function handleListen(){
   console.log(`Example app listening on port ${port}`);
 }
 app.listen(port, handleListen);
+
 
 
